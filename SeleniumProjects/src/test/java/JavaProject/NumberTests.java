@@ -21,10 +21,10 @@ public class NumberTests {
 		
 		int actNumber = 12345;
 		int reverseString = numericMethods.reverseNumber(actNumber);
-		System.out.println("Reverse numeric is: " + reverseString);
+		System.out.println("Reverse numeric is:  " + reverseString);
 		
 		int reverseString2 = numericMethods.reverseNumberRecursive(actNumber);
-		System.out.println("Reverse numeric using recursive is: " + reverseString2);
+		System.out.println("Reverse numeric using recursive is:  " + reverseString2);
 		
 	}
 		
