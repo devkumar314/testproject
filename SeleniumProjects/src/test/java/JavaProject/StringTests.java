@@ -84,5 +84,14 @@ public class StringTests {
 		
 	}
 	
+	@Test
+	public void checkOccuranceTest() {
+		String source = "Here is an example. Right here.";
+		String word = "here";
+		int result = stringMethods.getOccurrences(source, word);
+		
+		
+	}
+	
 	
 }
