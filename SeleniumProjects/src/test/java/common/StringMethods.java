@@ -64,6 +64,23 @@ public class StringMethods {
 		return s.equals(value);
 	}
 	
+	public int getOccurrences(String source, String word) {
+		
+		int loc = 0;
+        int count=0;
+
+        while(source.indexOf(source, loc)>=0){
+            int loc1 = source.indexOf(source, loc);
+            if(loc1>=0){
+                count=count+1;
+                loc = loc1+1;
+            }
+        }
+        return count;
+        
+
+	}
+	
 	public Boolean isSubStringPresent(String str, String subString1) {
 		
 		 if (str == null) {
