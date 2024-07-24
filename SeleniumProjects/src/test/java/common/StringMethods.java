@@ -1,6 +1,7 @@
 package common;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -66,16 +67,8 @@ public class StringMethods {
 	
 	public int getOccurrences(String source, String word) {
 		
-		int loc = 0;
-        int count=0;
-
-        while(source.indexOf(source, loc)>=0){
-            int loc1 = source.indexOf(source, loc);
-            if(loc1>=0){
-                count=count+1;
-                loc = loc1+1;
-            }
-        }
+		String cleaupString = source.replaceAll("\\.", "");
+		int count = (int) Arrays.stream(cleaupString.split(" ")).filter(w -> w.equalsIgnoreCase(word)).count();
         return count;
         
 

@@ -89,8 +89,7 @@ public class StringTests {
 		String source = "Here is an example. Right here.";
 		String word = "here";
 		int result = stringMethods.getOccurrences(source, word);
-		
-		
+		System.out.println("result - " + result);
 	}
 	
 	

@@ -1,21 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-16T13:18:14 IST" name="Default suite" finished-at="2024-07-16T13:18:14 IST" duration-ms="116">
+  <suite started-at="2024-07-23T19:46:30 IST" name="Default suite" finished-at="2024-07-23T19:46:31 IST" duration-ms="131">
     <groups>
     </groups>
-    <test started-at="2024-07-16T13:18:14 IST" name="Default test" finished-at="2024-07-16T13:18:14 IST" duration-ms="116">
-      <class name="JavaProject.DateTests">
-        <test-method is-config="true" signature="init()[pri:0, instance:JavaProject.DateTests@5677323c]" started-at="2024-07-16T13:18:14 IST" name="init" finished-at="2024-07-16T13:18:14 IST" duration-ms="8" status="PASS">
+    <test started-at="2024-07-23T19:46:30 IST" name="Default test" finished-at="2024-07-23T19:46:31 IST" duration-ms="131">
+      <class name="JavaProject.StringTests">
+        <test-method is-config="true" signature="init()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:30 IST" name="init" finished-at="2024-07-23T19:46:30 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="dateDifference()[pri:0, instance:JavaProject.DateTests@5677323c]" started-at="2024-07-16T13:18:14 IST" name="dateDifference" finished-at="2024-07-16T13:18:14 IST" duration-ms="68" status="PASS">
+        <test-method signature="checkAlphanumericStringTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:30 IST" name="checkAlphanumericStringTest" finished-at="2024-07-23T19:46:30 IST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- dateDifference -->
-      </class> <!-- JavaProject.DateTests -->
+        </test-method> <!-- checkAlphanumericStringTest -->
+        <test-method signature="checkOccuranceTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:31 IST" name="checkOccuranceTest" finished-at="2024-07-23T19:46:31 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkOccuranceTest -->
+        <test-method signature="checkPalingdromeStringTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:31 IST" name="checkPalingdromeStringTest" finished-at="2024-07-23T19:46:31 IST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkPalingdromeStringTest -->
+        <test-method signature="checkSubStringTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:31 IST" name="checkSubStringTest" finished-at="2024-07-23T19:46:31 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSubStringTest -->
+        <test-method signature="reverseStringCharAtTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:31 IST" name="reverseStringCharAtTest" finished-at="2024-07-23T19:46:31 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reverseStringCharAtTest -->
+        <test-method signature="reverseStringTest()[pri:0, instance:JavaProject.StringTests@38cee291]" started-at="2024-07-23T19:46:31 IST" name="reverseStringTest" finished-at="2024-07-23T19:46:31 IST" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reverseStringTest -->
+      </class> <!-- JavaProject.StringTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

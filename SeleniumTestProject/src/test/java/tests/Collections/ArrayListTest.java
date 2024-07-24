@@ -3,6 +3,8 @@ package tests.Collections;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class ArrayListTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void IterateTest() {
 		
 		System.out.println(" ====Start : IteratorTest ======");
@@ -77,6 +79,37 @@ public class ArrayListTest {
 		System.out.println(" ====End : IteratorTest ======");
 	}
 	
+	@Test
+	public void ReverseListTest() {
+		
+		System.out.println(" ====Start : ReverseListTest ======");
+		
+		List<Integer> source = Arrays.asList( 7, 17, 13, 19, 5 );
+		
+		Collections.reverse(source);
+		System.out.println(source);
+		
+		System.out.println(" ====End : ReverseListTest ======");
+	}
 	
+	@Test
+	public void AverageListTest() {
+		
+		System.out.println(" ====Start : AverageListTest ======");
+		
+		List<Integer> source = Arrays.asList( 7, 17, 13, 19, 5 );
+		
+		double avg = source.stream().reduce(0, Integer::sum) /source.size();
+		System.out.println("Average: "+ avg) ;
+		
+		int min = source.stream().min(Integer::compare).get();
+		System.out.println("Average: "+ min) ;
+		
+		int max = source.stream().max(Integer::compare).get();
+		System.out.println("Average: "+ max) ;
+		
+		System.out.println(" ====End : AverageListTest ======");
+	}
+
 
 }

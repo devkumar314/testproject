@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.Collections.Array">
+      <class name="RetryTest.MyTestClass">
         <methods>
-          <include name="multiDimentionalArrayTest"/>
+          <include name="test1"/>
         </methods>
-      </class> <!-- tests.Collections.Array -->
+      </class> <!-- RetryTest.MyTestClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
