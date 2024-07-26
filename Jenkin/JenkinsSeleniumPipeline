@@ -1,0 +1,92 @@
+pipeline {
+    agent any
+    
+    environment {
+        dir_path = 'C:/Jenkins/Test'  // Use forward slashes or double backslashes
+    }
+    
+    parameters {
+        string(name: 'TestJobName', defaultValue: '', description: 'A parameter from the freestyle job')
+    }
+
+    tools {
+        maven 'maven'
+    }
+    
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        stage('Receive Parameters') {
+            steps {
+                echo "Received PARAM1: ${params.TestJobName}"
+            }
+        }
+        
+        stage('Get Git Code') {
+            steps {
+                echo 'Get Git Code'
+                dir(env.dir_path) {
+                    git branch: 'main', credentialsId: 'MyGithub', url: 'https://github.com/devkumar314/testproject'
+                }
+            }
+        }
+        
+        stage('Compile Selenium Code') {
+            steps {
+                echo 'Compile Selenium Code'
+                dir("${env.dir_path}/SeleniumTestProject") {
+                    bat "mvn compile"
+                }
+            }
+        }
+        
+        stage('Run Selenium Code') {
+            steps {
+                echo 'Run Selenium Code'
+                dir("${env.dir_path}/SeleniumTestProject") {
+                    bat "mvn clean test -DsuiteXmlFile=suites/testng.xml"
+                }
+            }
+        }
+        
+        stage('Package') {
+            steps {
+                echo 'Package'
+                dir("${env.dir_path}/SeleniumTestProject") {
+                    bat "mvn package"
+                }
+            }
+        }
+        
+        stage('Save Artifacts') {
+            steps {
+                echo 'Save Artifacts'
+                dir("${env.dir_path}/SeleniumTestProject") {
+                    archiveArtifacts artifacts: 'target/surefire-reports/testng-results.xml', followSymlinks: false
+                }
+            }
+        }
+    }
+    
+    post {
+        
+        always{
+            echo 'Publishing Test Results'
+            dir("${env.dir_path}/SeleniumTestProject/target/surefire-reports") {
+				junit(
+					allowEmptyResults: true,
+					testResults: '*.xml'
+				)
+            }
+        }
+        
+        failure {
+            echo "Build failed, sending email notification"
+            emailext body: 'Jenkins build failed', subject: 'Jenkins Selenium Run Result', to: 'devkumar314@gmail.com'
+        }
+    }
+}
