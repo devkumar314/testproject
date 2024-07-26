@@ -2,6 +2,20 @@ package tests.StreamTest;
 
 import java.util.ArrayList;
 
+
+/*A stream in Java is a sequence of objects that supports various methods 
+ * which can be pipelined to produce the desired result. 
+ * 
+ * Different Operations On Streams
+ * 1. Intermediate Operations  - map(),  filter(), sorted()
+ * 2. Terminate Operations - collect(), forEach(), reduce()
+ * 
+ * https://www.geeksforgeeks.org/stream-in-java/
+ * 
+ * 
+ * 
+ */
+
 import org.testng.annotations.Test;
 
 class Book {
