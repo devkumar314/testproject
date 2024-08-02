@@ -7,6 +7,7 @@ import io.cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/Features/BackgroundDemo/BackgroundDemo.feature", glue= {"StepsForBackgroundDemo"},
+dryRun=true,
 monochrome=true,
 stepNotifications = true,
 plugin = {"pretty","html:target/HTMLReports.html",
