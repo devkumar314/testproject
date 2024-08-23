@@ -77,4 +77,29 @@ public class MapTest {
 		System.out.println(" ====END Iterator Test Map ======");
 	}
 
+	@Test
+	public void FindAverageTest() {
+
+		Map<String,Integer> map = new HashMap<String, Integer>();
+		
+		map.put("Brian", 21);
+		map.put("Lee", 42);
+		map.put("Cathe", 21);
+		
+		System.out.println(map);
+		System.out.println("===========FindAverageTest=================");
+		
+		int val1 = 0;
+		
+		Set<String> keys = map.keySet();
+		for(String key: keys) {
+			val1 = val1 + map.get(key);
+		}
+		
+		double average = val1/map.size();
+		System.out.println("average - " + average);
+		System.out.println("\n");
+		
+		System.out.println(" ====END FindAverageTest ======");
+	}
 }

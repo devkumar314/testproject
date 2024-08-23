@@ -25,7 +25,4 @@ public class LoginPagePOM {
 	public void clickLogin() {
 		driver.findElement(btn_login).click();
 	}
-	
-	
-
 }
