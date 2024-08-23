@@ -3,9 +3,6 @@ package Tests;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
@@ -13,7 +10,7 @@ import io.restassured.http.ContentType;
 
 public class PutPatchDeleteExample {
 	
-	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_Put() {
 		
@@ -27,7 +24,6 @@ public class PutPatchDeleteExample {
 		System.out.println(request);
 		System.out.println(request.toJSONString());
 		
-		
 		given().
 			header("Content-Type", "application/json").
 			contentType(ContentType.JSON).
@@ -40,6 +36,7 @@ public class PutPatchDeleteExample {
 			.log().all();
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_Patch() {
 		
@@ -72,7 +69,7 @@ public class PutPatchDeleteExample {
 		baseURI = "https://reqres.in";
 					
 		when().
-			patch("/api/users/2").
+			delete("/api/users/2").
 		then().
 			statusCode(200)
 			.log().all();

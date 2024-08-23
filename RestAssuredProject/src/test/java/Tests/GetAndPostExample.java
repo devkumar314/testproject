@@ -1,19 +1,19 @@
+
+
 package Tests;
 
 import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.json.simple.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 public class GetAndPostExample {
 	
@@ -64,13 +64,13 @@ public class GetAndPostExample {
 		System.out.println(request.toJSONString());
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_Post() {
 		
 		baseURI = "https://reqres.in/api";
 		
-		Map<String, Object> map = new HashMap<String, Object>();
-		
+		//Map<String, Object> map = new HashMap<String, Object>();
 		//map.put("name", "Devender");
 		//map.put("job", "Teacher");
 		//System.out.println(map);

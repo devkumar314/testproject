@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-25T16:32:38 IST" name="Default suite" finished-at="2024-07-25T16:32:38 IST" duration-ms="154">
+  <suite started-at="2024-08-07T16:04:02 IST" name="Default suite" finished-at="2024-08-07T16:04:02 IST" duration-ms="76">
     <groups>
     </groups>
-    <test started-at="2024-07-25T16:32:38 IST" name="Default test" finished-at="2024-07-25T16:32:38 IST" duration-ms="154">
-      <class name="tests.Utils.TXTReaderTest">
-        <test-method signature="BufferedReaderTest()[pri:0, instance:tests.Utils.TXTReaderTest@19e4653c]" started-at="2024-07-25T16:32:38 IST" name="BufferedReaderTest" finished-at="2024-07-25T16:32:38 IST" duration-ms="15" status="PASS">
+    <test started-at="2024-08-07T16:04:02 IST" name="Default test" finished-at="2024-08-07T16:04:02 IST" duration-ms="76">
+      <class name="tests.Collections.MapTest">
+        <test-method signature="FindAverageTest()[pri:0, instance:tests.Collections.MapTest@3f191845]" started-at="2024-08-07T16:04:02 IST" name="FindAverageTest" finished-at="2024-08-07T16:04:02 IST" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BufferedReaderTest -->
-        <test-method signature="FilesLinesTest()[pri:0, instance:tests.Utils.TXTReaderTest@19e4653c]" started-at="2024-07-25T16:32:38 IST" name="FilesLinesTest" finished-at="2024-07-25T16:32:38 IST" duration-ms="13" status="PASS">
+        </test-method> <!-- FindAverageTest -->
+        <test-method signature="IterateTest()[pri:0, instance:tests.Collections.MapTest@3f191845]" started-at="2024-08-07T16:04:02 IST" name="IterateTest" finished-at="2024-08-07T16:04:02 IST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FilesLinesTest -->
-        <test-method signature="FilesTest()[pri:0, instance:tests.Utils.TXTReaderTest@19e4653c]" started-at="2024-07-25T16:32:38 IST" name="FilesTest" finished-at="2024-07-25T16:32:38 IST" duration-ms="3" status="PASS">
+        </test-method> <!-- IterateTest -->
+        <test-method signature="arrayTest()[pri:0, instance:tests.Collections.MapTest@3f191845]" started-at="2024-08-07T16:04:02 IST" name="arrayTest" finished-at="2024-08-07T16:04:02 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FilesTest -->
-        <test-method signature="ReadBinaryFile()[pri:0, instance:tests.Utils.TXTReaderTest@19e4653c]" started-at="2024-07-25T16:32:38 IST" name="ReadBinaryFile" finished-at="2024-07-25T16:32:38 IST" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReadBinaryFile -->
-        <test-method signature="ScannerTest()[pri:0, instance:tests.Utils.TXTReaderTest@19e4653c]" started-at="2024-07-25T16:32:38 IST" name="ScannerTest" finished-at="2024-07-25T16:32:38 IST" duration-ms="37" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ScannerTest -->
-      </class> <!-- tests.Utils.TXTReaderTest -->
+        </test-method> <!-- arrayTest -->
+      </class> <!-- tests.Collections.MapTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

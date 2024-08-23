@@ -3,17 +3,11 @@ package Tests;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import org.json.simple.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 public class TestOnLocalAPI {
 	
@@ -31,6 +25,7 @@ public class TestOnLocalAPI {
 	}
 	
 	//@Test
+	@SuppressWarnings("unchecked")
 	public void test_Post() {
 		
 		baseURI = "http://localhost:3000";
@@ -53,6 +48,7 @@ public class TestOnLocalAPI {
 	}
 	
 	//@Test
+	@SuppressWarnings("unchecked")
 	public void test_Put() {
 		
 		baseURI = "http://localhost:3000";

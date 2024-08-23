@@ -92,5 +92,38 @@ public class StringTests {
 		System.out.println("result - " + result);
 	}
 	
+	@Test
+	public void swapCharacterWithAdjecent() {
+		System.out.println("==================swapCharacterWithAdjecent======================");
+		String aString1 = "I love my country";
+		String outString ="I olev ym ocnurty";
+		
+		String[] arrStr = aString1.split(" ");
+		
+		for (int j = 0; j < arrStr.length; j++) {
+			String str = arrStr[j];
+			if(str.length()<2) {
+				continue;
+			}
+			
+			char[] arrChar = str.toCharArray();
+			
+			for(int i=0; i<arrChar.length-1;i+=2) {
+				
+				char c = arrChar[i];
+				arrChar[i] = arrChar[i+1]; 
+				arrChar[i+1] = c;
+
+			}
+			arrStr[j] = new String(arrChar);
+			System.out.println(arrStr[j]);
+		}
+		
+		aString1 = String.join(" ", arrStr);
+		System.out.println(aString1);
+		Assert.assertEquals(outString, outString, "String not matched");
+		System.out.println("==================END of swapCharacterWithAdjecent======================");
+	}
+	
 	
 }
