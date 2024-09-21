@@ -88,6 +88,7 @@ public class STream {
 		
         List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
         names.stream().forEach(System.out::println);
+        names.forEach(System.out::println);
     }
 	
 	

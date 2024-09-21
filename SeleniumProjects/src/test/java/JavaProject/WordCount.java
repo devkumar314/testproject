@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class WordCount {
 
@@ -60,6 +61,7 @@ public class WordCount {
 		unique.addAll(arrList);
 		
 		List<Integer> sortedVal = new ArrayList<> (unique);
+		//List<Integer> sortedVal1=  unique.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList());
 		
 		if (sortedVal.size() < N) {
             return null; // Not enough unique values
