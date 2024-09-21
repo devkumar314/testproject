@@ -1,2 +1,2 @@
-input, "Devender"
-expected, "Kumar"
+input: "Devender"
+expected: "Kumar"

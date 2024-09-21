@@ -10,6 +10,7 @@ import io.cucumber.junit.Cucumber;
 tags="@Smoke and @regression",
 monochrome=true,
 stepNotifications = true,
+dryRun=true,
 plugin = {"pretty","html:target/HTMLReports.html",
 "json:target/JSONReports/reports.json",
 "junit:target/JUnitReports/reports.xml"
