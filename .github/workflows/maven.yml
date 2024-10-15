@@ -1,0 +1,63 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the code from the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    # Step 2: Set up JDK 17
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    # Step 4: Build the project (if necessary)
+    - name: Build with Maven
+      run: mvn clean install
+
+
+    # Step 5: Run Selenium tests in a specific folder
+    - name: Run Selenium tests
+      run: |
+        cd SeleniumProjects
+        mvn test
+
+    # Step 6: Upload test results for display in GitHub Actions UI (JUnit format)
+    - name: Archive test results
+      if: always()  # Ensure this step runs even if the tests fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: SeleniumProjects/target/surefire-reports/*.xml
+
+    # Step 7: Display test results in GitHub Actions UI (using the test report tool)
+    - name: Publish Test Results
+      if: always()
+      uses: dorny/test-reporter@v1
+      with:
+        name: Selenium Tests Report
+        path: SeleniumProjects/target/surefire-reports/*.xml
+        reporter: junit
+        fail-on-error: false
+
