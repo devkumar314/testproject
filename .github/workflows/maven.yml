@@ -62,4 +62,4 @@ jobs:
       with:
         name: Selenium Tests Report
         path: SeleniumTestProject/target/surefire-reports/testng-results.xml
-        reporter: junit  # Add this line to specify the report format
+        reporter: testng  # Add this line to specify the report format
