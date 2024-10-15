@@ -1,0 +1,14 @@
+name: Selenium with TestNG - CI
+ 
+on: push:
+    
+jobs:
+
+  my-job: 
+  
+    runs-on: ubuntu-latest
+ 
+    steps:
+
+    - name: my-step
+      run: echo "Hello World!"
