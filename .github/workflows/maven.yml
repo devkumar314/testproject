@@ -32,32 +32,32 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Step 4: Build the project (if necessary)
+    # Step 3: Build the project (using root pom.xml in testproject folder)
     - name: Build with Maven
-      run: mvn clean install
+      run: |
+        cd testproject
+        mvn clean install
 
-
-    # Step 5: Run Selenium tests in a specific folder
+    # Step 4: Run Selenium tests (in SeleniumProjects folder with its own pom.xml)
     - name: Run Selenium tests
       run: |
-        cd SeleniumProjects
+        cd testproject/SeleniumProjects
         mvn test
 
-    # Step 6: Upload test results for display in GitHub Actions UI (JUnit format)
+    # Step 5: Upload test results for display in GitHub Actions UI (JUnit format)
     - name: Archive test results
       if: always()  # Ensure this step runs even if the tests fail
       uses: actions/upload-artifact@v4
       with:
         name: test-results
-        path: SeleniumProjects/target/surefire-reports/*.xml
+        path: testproject/SeleniumProjects/target/surefire-reports/*.xml
 
-    # Step 7: Display test results in GitHub Actions UI (using the test report tool)
+    # Step 6: Display test results in GitHub Actions UI (using the test report tool)
     - name: Publish Test Results
       if: always()
       uses: dorny/test-reporter@v1
       with:
         name: Selenium Tests Report
-        path: SeleniumProjects/target/surefire-reports/*.xml
+        path: testproject/SeleniumProjects/target/surefire-reports/*.xml
         reporter: junit
         fail-on-error: false
-
