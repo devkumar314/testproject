@@ -39,7 +39,7 @@ jobs:
     # Step 4: Build the project (using root pom.xml in testproject folder)
     - name: Build with Maven
       run: |
-        cd SeleniumProjects
+        cd SeleniumTestProject
         mvn clean install
 
     # Step 5: Run Selenium tests (in SeleniumProjects folder with its own pom.xml)
@@ -53,7 +53,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test-results
-        path: testproject/SeleniumProjects/target/surefire-reports/*.xml
+        path: SeleniumTestProject/target/surefire-reports/*.xml
 
     # Step 7: Display test results in GitHub Actions UI (using the test report tool)
     - name: Publish Test Results
@@ -61,6 +61,6 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         name: Selenium Tests Report
-        path: testproject/SeleniumProjects/target/surefire-reports/*.xml
+        path: SeleniumTestProject/target/surefire-reports/*.xml
         reporter: junit
         fail-on-error: false
