@@ -39,13 +39,12 @@ jobs:
     # Step 4: Build the project (using root pom.xml in testproject folder)
     - name: Build with Maven
       run: |
-        cd testproject
+        cd SeleniumProjects
         mvn clean install
 
     # Step 5: Run Selenium tests (in SeleniumProjects folder with its own pom.xml)
     - name: Run Selenium tests
       run: |
-        cd testproject/SeleniumProjects
         mvn test
 
     # Step 6: Upload test results for display in GitHub Actions UI (JUnit format)
