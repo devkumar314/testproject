@@ -62,5 +62,5 @@ jobs:
       with:
         name: Selenium Tests Report
         path: SeleniumTestProject/target/surefire-reports/*.xml
-        reporter: junit
+        reporter: junit-xml  # Correct reporter value for JUnit XML format
         fail-on-error: false
