@@ -61,5 +61,5 @@ jobs:
       uses: dorny/test-reporter@v1
       with:
         name: Selenium Tests Report
-        path: SeleniumTestProject/target/surefire-reports/*.xml
-        
+        path: SeleniumTestProject/target/surefire-reports/testng-results.xml
+        reporter: junit  # Add this line to specify the report format
