@@ -5,6 +5,21 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>SeleniumTestProject</name>
 
+
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version> <!-- You can use any recent stable version -->
+            <configuration>
+                <source>17</source>  <!-- Set this to 17 for Java 17 -->
+                <target>17</target>  <!-- Set this to 17 for Java 17 -->
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 	<dependencies>
   
 	  	
