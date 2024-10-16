@@ -61,6 +61,7 @@ jobs:
 
     # Step 6: Generate Allure report with history
     - name: Generate Allure report
+      if: always()  # This ensures the report is generated even if tests fail
       run: |
         mvn allure:report
 
