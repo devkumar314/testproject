@@ -50,9 +50,11 @@ jobs:
       run: |
         cd CucumberProject
         mvn clean test
+        continue-on-error: true  # Ensure the workflow continues even if tests fail
 
     # Step 5: Merge Allure history from previous runs
     - name: Merge Allure history
+      if: always()  # This ensures the report is generated even if tests fail
       run: |
         mkdir -p target/allure-results/history
         cp -r allure-report/history/* target/allure-results/history/ || true
