@@ -28,7 +28,7 @@ public class WordCount {
 			System.out.println(entry + map.get(entry));
 		}
 		
-		int num = findNLargetsNumber(map, FIRST_LARGEST);
+		int num = findNLargetsNumber(map, 3);
 		System.out.println(num);
 		
 		for(String entry : map.keySet()) {

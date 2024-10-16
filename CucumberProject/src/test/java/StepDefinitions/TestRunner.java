@@ -13,7 +13,8 @@ stepNotifications = true,
 dryRun=true,
 plugin = {"pretty","html:target/HTMLReports.html",
 "json:target/JSONReports/reports.json",
-"junit:target/JUnitReports/reports.xml"
+"junit:target/JUnitReports/reports.xml",
+"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"  // This is for Allure reporting
 })
 public class TestRunner{
 	
