@@ -76,6 +76,7 @@
                 <execution>
                     <goals>
                         <goal>report</goal>
+			<goal>aggregate</goal>
                     </goals>
                 </execution>
             </executions>
