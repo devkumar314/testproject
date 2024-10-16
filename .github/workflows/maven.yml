@@ -36,37 +36,43 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Step 4: Build the project (using root pom.xml in testproject folder)
-    - name: Build with Maven
+        # Step 3: Cache Allure results and history
+    - name: Cache Allure results and history
+      uses: actions/cache@v3
+      with:
+        path: |
+          target/allure-results
+          allure-report/history
+        key: ${{ runner.os }}-allure-results-${{ github.sha }}
+
+    # Step 4: Run tests and generate Allure results
+    - name: Run tests with Maven
       run: |
         cd SeleniumTestProject
-        mvn clean install
+        mvn clean test
 
-    # Step 5: Run Selenium tests (in SeleniumProjects folder with its own pom.xml)
-    - name: Run Selenium tests
+    # Step 5: Merge Allure history from previous runs
+    - name: Merge Allure history
       run: |
-        mvn test
+        mkdir -p target/allure-results/history
+        cp -r allure-report/history/* target/allure-results/history/ || true
 
-    # Step 6: Upload test results for display in GitHub Actions UI (JUnit format)
-    - name: Archive test results
-      if: always()  # Ensure this step runs even if the tests fail
+    # Step 6: Generate Allure report with history
+    - name: Generate Allure report
+      run: |
+        mvn allure:report
+
+    # Step 7: Upload Allure report artifacts
+    - name: Upload Allure report
       uses: actions/upload-artifact@v4
       with:
-        name: test-results
-        path: SeleniumTestProject/target/surefire-reports/*.xml
+        name: allure-report
+        path: target/site/allure-maven/
 
-    # Step 7: Display test results in GitHub Actions UI (using the test report tool)
-    - name: Publish Test Results
-      if: always()
-      uses: dorny/test-reporter@v1
+    # Step 8: Deploy Allure report using GitHub Pages (Optional)
+    - name: Deploy Allure report to GitHub Pages
+      if: success()
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        name: Selenium Tests Report
-        path: SeleniumTestProject/target/surefire-reports/*.xml
-        reporter: junit
-        path-replace-backslashes: false
-        list-suites: all
-        list-tests: all
-        max-annotations: 10
-        fail-on-error: true
-        fail-on-empty: true
-        only-summary: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./target/site/allure-maven/
