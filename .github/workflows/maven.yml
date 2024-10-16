@@ -48,7 +48,7 @@ jobs:
     # Step 4: Run tests and generate Allure results
     - name: Run tests with Maven
       run: |
-        cd SeleniumTestProject
+        cd CucumberProject
         mvn clean test
 
     # Step 5: Merge Allure history from previous runs
