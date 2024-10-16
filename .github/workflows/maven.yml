@@ -56,8 +56,8 @@ jobs:
     - name: Merge Allure history
       if: always()  # This ensures the report is generated even if tests fail
       run: |
-        mkdir -p target/allure-results/history
-        cp -r allure-report/history/* target/allure-results/history/ || true
+        mkdir -p allure-results/history
+        cp -r allure-report/history/* allure-results/history/ || true
 
     # Step 6: Generate Allure report with history
     - name: Generate Allure report
